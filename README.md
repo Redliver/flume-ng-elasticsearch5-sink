@@ -63,20 +63,26 @@ built on top of a reactive framework.
 - netty-resolver-4.1.5.Final.jar
 - netty-transport-4.1.5.Final.jar
 
-##### log4j2 Dependencies
+##### log4j2 dependencies
 - log4j-1.2.16.jar
 - log4j-1.2-api-2.6.2.jar
 - log4j-api-2.6.2.jar
 - log4j-core-2.6.2.jar
 - log4j-slf4j-impl-2.1.jar
 
+#### avro dependencies
+- jackson-mapper-asl-1.8.8.jar
+- jackson-core-asl-1.8.8.jar 
+- retrotranslator-runtime-1.2.9.jar
+- backport-util-concurrent-3.1.jar
+- paranamer-2.3.jar
+- snappy-java-1.1.0.jar
+- commons-compress-1.4.1.jar
 
 ### Libraries to be removed:
 - jackson-annotations-2.3.0.jar
 - jackson-core-2.3.1.jar
-- jackson-core-asl-1.9.3.jar
 - jackson-databind-2.3.1.jar
-- jackson-mapper-asl-1.9.3.jar
 - joda-time-2.1.jar
 - log4j-1.2.17.jar
 - netty-3.5.12.Final.jar
@@ -99,7 +105,7 @@ built on top of a reactive framework.
              <RollingFile name="RollingFile" fileName="logs/flume.log"
                      filePattern="logs/flume.%d{yyyy-MM-dd}-%i.log"
                      ignoreExceptions="false">
-                <PatternLayout charset="UTF-8" pattern="${appenderPatternLayout}" />
+                <PatternLayout charset="UTF-8" pattern="%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} %L %M - %msg%xEx%n" />
                 <Policies>
                     <TimeBasedTriggeringPolicy />
                     <SizeBasedTriggeringPolicy size="100 MB"/>
@@ -108,7 +114,7 @@ built on top of a reactive framework.
         </appenders>
 
         <loggers>
-            <root level="trace">
+            <root level="info">
                 <appender-ref ref="RollingFile"/>
                 <appender-ref ref="Console"/>
             </root>
