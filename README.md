@@ -31,6 +31,7 @@ built on top of a reactive framework.
 - jackson-dataformat-yaml-2.8.1.jar
 - joda-convert-1.2.jar
 - joda-time-2.9.4.jar
+- snakeyaml-1.17.jar
 
 ##### elasticsearch-5.0, plugins & dependencies
 - elasticsearch-5.0.0.jar
